@@ -396,8 +396,8 @@ elif [[ "$(cat < /etc/system-release-cpe | cut -d: -f5)" == '7' ]]; then
 fi
 
 mkdir -m 777 /root/.web/
-echo "Firenet Developer Property<br>
-Contact(Whatsapp): +639703855290... " >> /root/.web/index.php
+echo "Md Rakibul Hasan Developer Property<br>
+Contact(Whatsapp): +8801759183699... " >> /root/.web/index.php
 }
 }
 
